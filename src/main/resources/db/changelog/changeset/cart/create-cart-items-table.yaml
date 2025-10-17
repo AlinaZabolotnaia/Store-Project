@@ -1,0 +1,69 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-cart-items-table
+      author: anovosiolov@griddynamics.com
+      changes:
+        - createTable:
+            tableName: cart_items
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    unique: true
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: quantity
+                  type: integer
+                  constraints:
+                    nullable: false
+              - column:
+                  name: cart_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    foreignKeyName: cart_id_fk
+              - column:
+                  name: product_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+        - addForeignKeyConstraint:
+            baseTableName: cart_items
+            constraintName: cart_id_fk
+            referencedTableName: carts
+            referencedColumnNames: id
+            baseColumnNames: cart_id
+
+        - addForeignKeyConstraint:
+            baseTableName: cart_items
+            constraintName: product_id_fk
+            referencedTableName: products
+            referencedColumnNames: id
+            baseColumnNames: product_id
+
+
+
+        - createTable:
+            tableName: cart_items_seq
+            columns:
+              - column:
+                  name: next_val
+                  type: bigint
+        - insert:
+            tableName: cart_items_seq
+            columns:
+              - column:
+                  name: next_val
+                  value: 1
+
+
+
+
+
+
+
+
+

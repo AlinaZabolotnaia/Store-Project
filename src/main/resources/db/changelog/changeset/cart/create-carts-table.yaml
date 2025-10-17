@@ -1,0 +1,56 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-carts-table
+      author: anovosiolov@griddynamics.com
+      changes:
+        - createTable:
+            tableName: carts
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    unique: true
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: actual
+                  type: bit
+                  constraints:
+                    nullable: false
+              - column:
+                  name: user_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    foreignKeyName: user_id_fk
+        - addForeignKeyConstraint:
+            baseTableName: carts
+            constraintName: user_id_fk
+            referencedTableName: users
+            referencedColumnNames: id
+            baseColumnNames: user_id
+
+
+        - createTable:
+            tableName: carts_seq
+            columns:
+              - column:
+                  name: next_val
+                  type: bigint
+        - insert:
+            tableName: carts_seq
+            columns:
+              - column:
+                  name: next_val
+                  value: 1
+
+
+
+
+
+
+
+
+

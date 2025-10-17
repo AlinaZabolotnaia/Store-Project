@@ -1,0 +1,9 @@
+databaseChangeLog:
+  - changeSet:
+      id: insert-products-into-products-table
+      author: anovosiolov@griddynamics.com
+      changes:
+        - sqlFile:
+            path: sql/insert-products-into-table.sql
+            stripComments: true
+            splitStatements: true

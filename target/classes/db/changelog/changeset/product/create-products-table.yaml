@@ -1,0 +1,46 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-products-table
+      author: anovosiolov@griddynamics.com
+      changes:
+        - createTable:
+            tableName: products
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    unique: true
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: title
+                  type: varchar (255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: available
+                  type: int
+                  constraints:
+                    nullable: false
+              - column:
+                  name: price
+                  type: decimal(38,2)
+                  constraints:
+                    nullable: false
+
+        - createTable:
+            tableName: products_seq
+            columns:
+              - column:
+                  name: next_val
+                  type: bigint
+
+        - insert:
+            tableName: products_seq
+            columns:
+              - column:
+                  name: next_val
+                  value: 100
+
