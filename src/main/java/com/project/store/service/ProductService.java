@@ -1,8 +1,8 @@
-package com.project.store.nvs.store.service;
+package com.project.store.service;
 
-import com.project.store.nvs.store.dto.ProductDTO;
-import com.project.store.nvs.store.models.product.Product;
-import com.project.store.nvs.store.repository.ProductRepository;
+import com.project.store.dto.ProductDTO;
+import com.project.store.models.product.Product;
+import com.project.store.repository.ProductRepository;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
