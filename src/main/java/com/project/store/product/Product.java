@@ -1,4 +1,4 @@
-package com.project.store.nvs.store.models.product;
+package com.project.store.product;
 
 import jakarta.persistence.*;
 import lombok.*;

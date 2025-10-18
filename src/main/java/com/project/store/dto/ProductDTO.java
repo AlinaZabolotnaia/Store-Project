@@ -1,4 +1,4 @@
-package com.project.store.nvs.store.dto;
+package com.project.store.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

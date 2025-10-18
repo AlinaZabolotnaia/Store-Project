@@ -1,6 +1,6 @@
-package com.project.store.nvs.store.repository;
+package com.project.store.repository;
 
-import com.project.store.nvs.store.models.product.Product;
+import com.project.store.product.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface ProductRepository extends JpaRepository<Product, Long> {

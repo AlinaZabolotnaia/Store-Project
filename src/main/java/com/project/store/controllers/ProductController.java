@@ -1,8 +1,8 @@
-package com.project.store.nvs.store.controllers;
+package com.project.store.controllers;
 
-import com.project.store.nvs.store.dto.ProductDTO;
-import com.project.store.nvs.store.models.product.Product;
-import com.project.store.nvs.store.service.ProductService;
+import com.project.store.dto.ProductDTO;
+import com.project.store.product.Product;
+import com.project.store.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
