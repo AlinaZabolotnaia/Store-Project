@@ -2,11 +2,17 @@ package com.project.store.auth;
 
 import com.project.store.config.JwtService;
 import com.project.store.exception.UserAlreadyRegisteredException;
+import com.project.store.models.user.Role;
+import com.project.store.models.user.User;
+import com.project.store.repository.UserRepository;
+import com.project.store.service.CartService;
+import com.project.store.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+
 
 @Service
 @RequiredArgsConstructor

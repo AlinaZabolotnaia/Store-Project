@@ -1,5 +1,6 @@
 package com.project.store.service;
 
+import com.project.store.exception.UserNotFoundException;
 import com.project.store.models.user.User;
 import com.project.store.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
@@ -13,7 +14,7 @@ public class UserService {
 
     public User getUserByEmail(String email) {
         return userRepository.findByEmail(email)
-                .orElseThrow(() -> new RuntimeException(
+                .orElseThrow(() -> new UserNotFoundException(
                         String.format("User with email [%s] not found", email)));
     }
 
