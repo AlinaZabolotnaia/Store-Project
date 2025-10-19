@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import com.project.store.models.user.User;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -20,7 +21,7 @@ public class Cart {
     @Id
     @GeneratedValue
     private Long id;
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "cart")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "cart")
     private List<CartItem> cartItems;
 
     @ManyToOne

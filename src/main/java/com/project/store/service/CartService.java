@@ -27,6 +27,7 @@ public class CartService {
     private final UserService userService;
     private final ProductRepository productRepository;
 
+    @Transactional
     public CartDTO findActualCartByEmail() {
         String userEmail = UserUtils.getUserEmailFromContext();
         User user = userService
@@ -49,6 +50,7 @@ public class CartService {
         return cartDTO;
     }
 
+    @Transactional
     public List<CartDTO> getAllCarts() {
         String userEmail = UserUtils.getUserEmailFromContext();
         return cartRepository
@@ -82,14 +84,14 @@ public class CartService {
         }
 
         validateAvailableProductQuantities(product, cartItemRequest.getQuantity());
-        CartItem newCartItem = CartItem
-                .builder()
+
+        CartItem newCartItem = CartItem.builder()
                 .quantity(cartItemRequest.getQuantity())
                 .product(product)
                 .cart(actualCart)
                 .build();
-        cartItems.add(newCartItem);
-        actualCart.setCartItems(cartItems);
+
+        actualCart.getCartItems().add(newCartItem); // or cartItems.add(newCartItem)
         cartRepository.save(actualCart);
         return newCartItem;
     }
