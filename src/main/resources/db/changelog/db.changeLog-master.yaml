@@ -1,12 +1,12 @@
 databaseChangeLog:
-  - include:
-      file: db/changelog/changeset/user/create-users-table.yaml
-  - include:
-      file: db/changelog/changeset/product/create-products-table.yaml
-  - include:
-      file: db/changelog/changeset/cart/create-carts-table.yaml
-  - include:
-      file: db/changelog/changeset/cart/create-cart-items-table.yaml
+#  - include:
+#      file: db/changelog/changeset/user/create-users-table.yaml
+#  - include:
+#      file: db/changelog/changeset/product/create-products-table.yaml
+#  - include:
+#      file: db/changelog/changeset/cart/create-carts-table.yaml
+#  - include:
+#      file: db/changelog/changeset/cart/create-cart-items-table.yaml
   - include:
       file: db/changelog/changeset/product/insert-products-into-products-table.yaml
 
